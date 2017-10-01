@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicles</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'showcr.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" >
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'registerpage:homepage' %}">Palashi Car Rental</a></div>
+            <div><ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'registerpage:reg' %}"><span class="glyphicon glyphicon-plus"> Register</span></a></li>
+                <li><a href="{% url 'registerpage:log' %}"><span class="glyphicon glyphicon-user"> Login</span></a></li>
+                <li><a href="{% url 'registerpage:fq' %}"><span class="glyphicon glyphicon-question-sign"> FAQ</span></a></li>
+            </ul></div>
+        </div>
+    </nav>
+    <table align="center">
+        <tr><th colspan="3"> STANDARD LOW COST CAR. Cost Per Hour 1200 BDT</th></tr>
+        <tr>
+            <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Chevrolet Cruze' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+            </td>
+            <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Jeep Wrangle' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+            </td>
+            <td>
+               {% for car in all_car %}
+                    {% if car.carname == 'Chevrolet Spark'%}
+                        <img src="{{ car.carimage.url }}">
+                    {% endif %}
+               {% endfor %}
+            </td>
+        </tr>
+    </table>
+    <table align="center">
+        <tr><th colspan="3"> ECONOMY: MEDIUM COST CAR. Cost Per Hour 2000 BDT</th></tr>
+        <tr>
+           <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Toyota Corolla' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+           </td>
+            <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Nissan Versa' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+            </td>
+            <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Chrysler 200' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+            </td>
+        </tr>
+    </table>
+    <table align="center">
+        <tr><th colspan="3">LUXURY: HIGH COST CAR. Cost Per Hour 4500 BDT</th></tr>
+        <tr>
+            <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Ford Mustang' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+            </td>
+            <td>
+               {% for car in all_car %}
+                     {% if car.carname == 'Chevrolet Impala' %}
+                        <img src="{{ car.carimage.url }}">
+                     {% endif %}
+               {% endfor %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

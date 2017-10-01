@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'hmpage.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" >
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'registerpage:homepage' %}">Palashi Car Rental</a></div>
+            <div><ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'registerpage:caaar' %}"><span class="glyphicon glyphicon-search"> Vehicles</span></a></li>
+                <li><a href="{% url 'registerpage:reg' %}"><span class="glyphicon glyphicon-plus"> Register</span></a></li>
+                <li><a href="{% url 'registerpage:log' %}"><span class="glyphicon glyphicon-user"> Login</span></a></li>
+                <li><a href="{% url 'registerpage:fq' %}"><span class="glyphicon glyphicon-question-sign"> FAQ</span></a></li>
+            </ul></div>
+        </div>
+    </nav>
+    <div id="slider">
+        <figure>
+            <a href ="{% url 'registerpage:caaar' %}">
+            {% load static %} <img src="{% static "images/slide1.jpg" %}" alt="Hi!" />
+            </a>
+            {% load static %} <img src="{% static "images/slide2.jpg" %}" alt="Hi!" />
+            {% load static %} <img src="{% static "images/slide3.jpg" %}" alt="Hi!" />
+            {% load static %} <img src="{% static "images/slider4.jpg" %}" alt="Hi!" />
+        </figure>
+    </div>
+</body>
+</html>
+

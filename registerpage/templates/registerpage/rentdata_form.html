@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent car</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'rentdata.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" >
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'registerpage:loghome' %}">Palashi Car Rental</a></div>
+            <div><ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'registerpage:caaar' %}"><span class="glyphicon glyphicon-search"> Vehicles</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-question-sign"> FAQ</span></a></li>
+            </ul></div>
+        </div>
+    </nav>
+    <table>
+        <tr>
+            <td>
+                <form method="post" action="#" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label>Pick Up Location:</label> <input class="inp" type="text" name="source" placeholder="Dhaka"/> <br/><br>
+                <label>Destination:</label> <input class="inp" type="text" name="destination" placeholder="Chittagong"/> <br/><br>
+                <label>Start Time:</label> <input class="inp" type="text" name="start" placeholder="DD MM 00:00am"/> <br/> <br>
+                <label>Arrival Time:</label> <input class="inp" type="text" name="end" placeholder="DD MM 00:00am"/> <br/><br>
+                <label>Car Name:</label> <input class="inp" type="text" name="carname" placeholder="Toyota Corolla"/> <br/><br>
+                    <label>Credit Card No:</label> <input class="inp" type="text" name="ccno" placeholder="cc123jhak"/> <br/><br>
+                <input class="sub" type="submit" value="Continue" />
+                </form>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Toyota Corolla' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Nissan Versa' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Chevrolet Cruze' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Jeep Wrangle' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Chevrolet Spark' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Ford Mustang' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Chrysler 200' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for car in all_car %}
+                                {% if car.carname == 'Chevrolet Impala' %}
+                                     <img src="{{ car.carimage.url }}">
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+body{
+    background:url("images/back.jpg") no-repeat;
+    background-size: cover;
+}
+
+.nav{
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: "Monotype Corsiva", cursive;
+}
+
+@keyframes slider {
+    0%{
+        left: 0;
+    }
+    10%{
+        left: -20%;
+    }
+    20%{
+        left: -40%;
+    }
+    30%{
+        left: -60%;
+    }
+    40%{
+        left: -80%;
+    }
+    50%{
+        left: -100%;
+    }
+    60%{
+        left: -120%;
+    }
+    70%{
+        left: -140%;
+    }
+    80%{
+        left: -160%;
+    }
+    90%{
+        left: -190%;
+    }
+    100%{
+        left: -220%;
+    }
+}
+
+#slider {
+    overflow: hidden;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+#slider figure {
+    position: relative;
+    width: 400%;
+    margin-top: 200px;
+    animation: 20s slider infinite;
+}

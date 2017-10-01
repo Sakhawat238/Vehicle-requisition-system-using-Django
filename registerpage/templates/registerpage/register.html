@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" >
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'registerpage:homepage' %}">Palashi Car Rental</a></div>
+            <div><ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'registerpage:caaar' %}"><span class="glyphicon glyphicon-search"> Vehicles</span></a></li>
+                <li><a href="{% url 'registerpage:log' %}"><span class="glyphicon glyphicon-user"> Login</span></a></li>
+                <li><a href="{% url 'registerpage:fq' %}"><span class="glyphicon glyphicon-question-sign"> FAQ</span></a></li>
+            </ul></div>
+        </div>
+    </nav>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label>Username:</label> <input class="inp" type="text" name="username" placeholder="User"/> <br/><br>
+        <label>Password:</label> <input class="inp" type="password" name="password" placeholder="123%abc"/> <br/><br>
+        <label>Email:</label> <input class="inp" type="text" name="email" placeholder="example.gmail.com"/> <br/> <br>
+        <label>First Name:</label> <input class="inp" type="text" name="first_name" placeholder="Sakhawat"/> <br/><br>
+        <label>Last Name:</label> <input class="inp" type="text" name="last_name" placeholder="Hossain"/> <br/><br>
+        <input class="sub" type="submit" value="Create" />
+        <div>
+         Already have an account? <a href="{% url 'registerpage:log' %}">Click here</a> to log in.
+        </div>
+    </form>
+</body>
+</html>
+
+

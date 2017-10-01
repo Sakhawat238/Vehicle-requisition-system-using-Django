@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'hmpage.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" >
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'registerpage:homepage' %}">Palashi Car Rental</a></div>
+            <div><ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'registerpage:rnt' %}"><span class="glyphicon glyphicon-road"> Rent A CAR</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-book"> History</span></a></li>
+                <li><a href="{% url 'registerpage:out' %}"><span class="glyphicon glyphicon-off"> Log out</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-question-sign"> FAQ</span></a></li>
+            </ul></div>
+        </div>
+    </nav>
+</body>
+</html>
